@@ -1,0 +1,8 @@
+{
+  "presets": [["env", {"browsers": "last 2 versions"}], "flow", "react"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-react-constant-elements",
+    "transform-class-properties"
+  ],
+}

@@ -1,0 +1,77 @@
+{
+  "name": "scoops-labels-template",
+  "version": "1.0.0",
+  "description": "lays out mailing labels for Detroit Urban Grotto scoops for printing",
+  "scripts": {
+    "start": "webpack-dev-server --host 0.0.0.0 --open --progress --devtool eval",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
+    "lint:watch": "esw --watch src",
+    "flow": "flow",
+    "flow:coverage": "for file in src/**.js; do echo $file; flow coverage $file; done",
+    "flow:watch": "flow-watch -e js,js.flow,flowconfig --ignore node_modules/ --watch .flowconfig --watch src/",
+    "build": "NODE_ENV=production webpack",
+    "commitmsg": "validate-commit-msg",
+    "precommit": "npm run lint && flow",
+    "prepublishOnly": "npm run lint && flow && npm run build"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jedwards1211/scoops-labels-template.git"
+  },
+  "keywords": [],
+  "author": "Andy Edwards",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jedwards1211/scoops-labels-template/issues"
+  },
+  "homepage": "https://github.com/jedwards1211/scoops-labels-template#readme",
+  "devDependencies": {
+    "@jedwards1211/eslint-config-flow": "^1.0.0",
+    "@jedwards1211/eslint-config-react": "^4.0.0",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-constant-elements": "^6.9.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "babel-runtime": "^6.20.0",
+    "copy": "^0.3.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-flowtype": "^2.29.2",
+    "eslint-plugin-react": "^7.9.1",
+    "eslint-watch": "^3.1.5",
+    "flow-bin": "^0.74.0",
+    "flow-watch": "^1.1.0",
+    "husky": "^0.14.3",
+    "rimraf": "^2.5.4",
+    "validate-commit-msg": "^2.8.2",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.6",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "@material-ui/core": "^1.2.1",
+    "@material-ui/icons": "^1.1.0",
+    "classnames": "^2.2.5",
+    "jss": "^9.8.3",
+    "material-ui-render-props-styles": "^4.0.1",
+    "qs": "^6.5.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-jss": "^8.5.1",
+    "react-router-dom": "^4.3.1",
+    "react-tap-event-plugin": "^3.0.3",
+    "reselect": "^3.0.1"
+  }
+}
